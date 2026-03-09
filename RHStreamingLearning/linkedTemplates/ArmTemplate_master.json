@@ -1,0 +1,84 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "RHStreamingLearning"
+		},
+		"CountriesJSON_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'CountriesJSON'"
+		},
+		"RHApi_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'RHApi'"
+		},
+		"AzureKeyVault1_properties_typeProperties_baseUrl": {
+			"type": "string",
+			"defaultValue": "https://RHTest.vault.azure.net/"
+		},
+		"CountriesJSON_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://vasurhtest.dfs.core.windows.net/"
+		},
+		"LS_RobinhoodAPI_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://api.robinhood.com/"
+		},
+		"Rest_Countries_poc_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://restcountries.com"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "RHStreamingLearning_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"CountriesJSON_accountKey": {
+						"value": "[parameters('CountriesJSON_accountKey')]"
+					},
+					"RHApi_connectionString": {
+						"value": "[parameters('RHApi_connectionString')]"
+					},
+					"AzureKeyVault1_properties_typeProperties_baseUrl": {
+						"value": "[parameters('AzureKeyVault1_properties_typeProperties_baseUrl')]"
+					},
+					"CountriesJSON_properties_typeProperties_url": {
+						"value": "[parameters('CountriesJSON_properties_typeProperties_url')]"
+					},
+					"LS_RobinhoodAPI_properties_typeProperties_url": {
+						"value": "[parameters('LS_RobinhoodAPI_properties_typeProperties_url')]"
+					},
+					"Rest_Countries_poc_properties_typeProperties_url": {
+						"value": "[parameters('Rest_Countries_poc_properties_typeProperties_url')]"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}

@@ -1,0 +1,33 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "RHStreamingLearning"
+		},
+		"CountriesJSON_accountKey": {
+			"value": ""
+		},
+		"RHApi_connectionString": {
+			"value": ""
+		},
+		"AzureKeyVault1_properties_typeProperties_baseUrl": {
+			"value": "https://RHTest.vault.azure.net/"
+		},
+		"CountriesJSON_properties_typeProperties_url": {
+			"value": "https://vasurhtest.dfs.core.windows.net/"
+		},
+		"LS_RobinhoodAPI_properties_typeProperties_url": {
+			"value": "https://api.robinhood.com/"
+		},
+		"Rest_Countries_poc_properties_typeProperties_url": {
+			"value": "https://restcountries.com"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
