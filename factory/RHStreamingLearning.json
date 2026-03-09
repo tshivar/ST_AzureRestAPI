@@ -1,0 +1,9 @@
+{
+	"name": "RHStreamingLearning",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "e31d563f-1967-4e8e-a929-6cf1212bf553",
+		"tenantId": "b210b046-1e42-4204-b246-1eaacf33b467"
+	}
+}

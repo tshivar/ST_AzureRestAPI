@@ -1,0 +1,23 @@
+{
+	"name": "LS_RobinhoodAPI",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "RestService",
+		"typeProperties": {
+			"url": "https://api.robinhood.com/",
+			"enableServerCertificateValidation": true,
+			"authenticationType": "Anonymous",
+			"additionalHeaders": {
+				"Authorization": {
+					"type": "AzureKeyVaultSecret",
+					"store": {
+						"referenceName": "AzureKeyVault1",
+						"type": "LinkedServiceReference"
+					},
+					"secretName": "RH"
+				}
+			}
+		}
+	}
+}

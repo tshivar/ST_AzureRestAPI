@@ -1,0 +1,23 @@
+{
+	"name": "API_Output_FileName",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "RHApi",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": {
+					"value": "@concat('file_', formatDateTime(utcnow(), 'yyyy-MM-dd_HH-mm-ss'), '.json')",
+					"type": "Expression"
+				},
+				"container": "bronze"
+			}
+		},
+		"schema": {}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

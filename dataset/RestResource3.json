@@ -1,0 +1,16 @@
+{
+	"name": "RestResource3",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_RobinhoodAPI",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "RestResource",
+		"typeProperties": {
+			"relativeUrl": "accounts/"
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
