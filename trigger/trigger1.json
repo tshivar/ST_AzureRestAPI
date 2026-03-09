@@ -1,0 +1,33 @@
+{
+	"name": "trigger1",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "CountryName",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Day",
+				"interval": 1,
+				"startTime": "2026-03-09T23:45:00",
+				"endTime": "2026-03-10T23:45:00",
+				"timeZone": "Eastern Standard Time",
+				"schedule": {
+					"minutes": [
+						53
+					],
+					"hours": [
+						19
+					]
+				}
+			}
+		}
+	}
+}
