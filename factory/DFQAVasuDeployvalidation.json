@@ -1,0 +1,9 @@
+{
+	"name": "DFQAVasuDeployvalidation",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "deccede5-474d-487c-83e3-5988273b254c",
+		"tenantId": "b210b046-1e42-4204-b246-1eaacf33b467"
+	}
+}
